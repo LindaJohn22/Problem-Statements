@@ -1,0 +1,30 @@
+//Problem Statement: Take input from the teacher as to know how many students have attended the test and the take marks as input for each student.Once the marks have been entered, find average so as to know the average score of the class.
+//laguage used:Java
+//----------
+
+package teacher;
+
+import java.util.Scanner;
+
+public class Teacher {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of students");
+		int no_students = sc.nextInt();
+		int[] scores = new int[no_students];
+		for(int i=0;i<no_students;i++) {
+			System.out.println("Enter the marks for student"+i);
+			scores[i] = sc.nextInt();
+		}
+		double avg_marks = 0;
+		for(int i=0;i<no_students;i++) {
+			avg_marks += scores[i];
+		}
+		avg_marks = avg_marks/no_students;
+		System.out.println("Average Score:"+avg_marks);
+		
+
+	}
+
+}
