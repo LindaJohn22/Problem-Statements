@@ -1,0 +1,37 @@
+//Problem Statement: Take input from the user to get any random number and check whether the entered number is a palindrome or not.
+//language used: Java
+//------------
+
+
+package Palidrome;
+
+import java.util.Scanner;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("enter a number");
+		Scanner sc=new Scanner(System.in);
+		int n = sc.nextInt();
+		int temp = n;
+		int sum = 0;
+		while(temp>0)
+		{
+			int ld = temp % 10;
+			temp /= 10;
+			sum = sum*10 + ld;
+			
+		}
+		if(n==sum)
+		{
+		System.out.println("palindrome");
+		}
+		else
+		{
+			System.out.println("not a palindrome");
+		}
+
+	}
+
+}
