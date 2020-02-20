@@ -1,0 +1,89 @@
+//Problem statement: A person gets a car as a bday present. Some features are added on to the car via objects and methods.Now for christmas, the person receives a sports car as a gift since he loves sports' cars which have some new feature.We can know the current state of the car and how many people are sitting in the car.
+//language used: Java
+//--------------------------------------
+
+package cars;
+
+public class Cars {
+	
+	int maxSpeed = 100;
+	int minSpeed = 0;
+	
+	double weight = 4079;
+	
+	boolean isTheCarOn = false;
+	char condition ='A' ;
+	String nameOfCar = "Lucy";
+	
+	double maxFuel = 16;
+	double currentFuel = 8;
+	double rpg = 26.4;
+	
+	int numOfPeopleInCar = 1;
+
+    public Cars(int customMinSpeed,double customWeight,boolean customIsTheCarOn,int customMaxSpeed) {
+    	minSpeed = customMinSpeed;
+    	weight = customWeight;
+    	isTheCarOn = customIsTheCarOn;
+    	maxSpeed = customMaxSpeed;
+    }
+	
+	public void printVariables() {
+		System.out.println("This is the maximum speed "+maxSpeed);
+		System.out.println("Minimum speed= "+minSpeed);
+		System.out.println("weight= "+weight);
+		System.out.println("The car is On: "+isTheCarOn);
+		System.out.println("Condition of the car= "+condition);
+		System.out.println("Name of the Car= "+nameOfCar);
+		System.out.println("Number of people in the Car= "+numOfPeopleInCar);
+	}
+	
+	public void wreckCar() {
+		condition = 'C';
+	}
+	
+	public void upgradeSpeed() {
+		minSpeed = maxSpeed;
+		maxSpeed += 1;
+	}
+	
+	public void getIn() {
+		numOfPeopleInCar++;  
+	}
+	
+	public void getOut() {
+		numOfPeopleInCar--;  
+	}
+	
+	public double howManyMilesTillOutOfGas() {
+		return currentFuel * rpg;
+		
+	}
+	
+	public double maxMilesPerFillUp() {
+		return maxFuel * rpg;
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Cars bdayPresent = new Cars(10,5000.5,true,500);
+		System.out.println("Birthday present v1:");
+		bdayPresent.getIn();
+		bdayPresent.getIn();
+		System.out.println("Miles Left:"+bdayPresent.howManyMilesTillOutOfGas());
+		System.out.println("max miles: "+bdayPresent.maxMilesPerFillUp());
+		bdayPresent.printVariables();
+		System.out.println(" ");
+		System.out.println("Birthday present v2:");
+		bdayPresent.getOut();
+		bdayPresent.printVariables();
+		
+		System.out.println(" ");
+ 		System.out.println("Christmas present:");
+ 		Cars xmasPresent = new Cars(20,2000,false,550);
+		xmasPresent.printVariables();
+	    
+	} 
+
+}

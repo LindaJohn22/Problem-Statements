@@ -1,0 +1,61 @@
+//Problem Statement: A family owns a car which is also used by the family member Alice. If the speed or the condition of the car changes,Alice's car will also be affected since it's the same car.
+//Language used: Java
+//-------------------
+
+package cars;
+
+public class Cars {
+	
+	int maxSpeed = 100;
+	int minSpeed = 0;
+	
+	double weight = 4079;
+	
+	boolean isTheCarOn = false;
+	char condition ='A' ;
+	String nameOfCar = "Lucy";
+	
+	public void printVariables() {
+		System.out.println("This is the maximum speed "+maxSpeed);
+		System.out.println(minSpeed);
+		System.out.println(weight);
+		System.out.println(isTheCarOn);
+		System.out.println(condition);
+		System.out.println(nameOfCar);
+	}
+	
+	public void wreckCar() {
+		condition = 'C';
+	}
+	
+	public void upgradeSpeed() {
+		minSpeed = maxSpeed;
+		maxSpeed += 1;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 System.out.println("NOTE:Alice uses the family car.");
+	    Cars car = new Cars();
+	    System.out.println("Family car:");
+	    car.printVariables();
+	    Cars aliceCar = car;
+	    car.wreckCar();
+	    System.out.println(" ");
+	    System.out.println("Alice's Car:");
+	    car.printVariables();
+	    System.out.println(" ");
+	    System.out.println("Alice's car after the family car is wrecked:");
+	    aliceCar.printVariables();
+	    System.out.println(" ");
+	    System.out.println("After speed is changed:");
+	    aliceCar.upgradeSpeed();
+	    System.out.println("Alice's Car:");
+	    aliceCar.printVariables();
+	    System.out.println(" ");
+	    System.out.println("Family Car:");
+	    car.printVariables();	    
+
+	} 
+
+}
