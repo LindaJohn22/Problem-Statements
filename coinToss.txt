@@ -1,0 +1,34 @@
+//Problem statement:Toss a random coin and find if we get a tails or a heads.Also display the probability of the possible outcomes.
+//language used: Java
+//---------------------------
+
+package coinToss;
+import java.util.Random;
+
+public class Cointoss {
+	
+	public String tossACoin() {
+		Random rand = new Random();
+		int toss = Math.abs(rand.nextInt()) % 2;//check if the random number is even or odd. If odd then we get HEADS and if even then we get TAILS.
+		if (toss == 0) {
+			return "HEADS";
+		}
+		else {
+			return "TAILS";
+		}
+	}
+
+	public static void main(String[] args) {
+		String Coin[] = new String[] {"HEADS","TAILS"}; //This array contains all possible outputs of a coin toss
+		int length = Coin.length; //find the length of the array of possibilites.
+		Cointoss game = new Cointoss();
+		double prob = 1.0/length;//find probability
+		System.out.println("Probability(HEADS) = "+prob+" & Probabality(TAILS) = "+prob);
+		System.out.println(game.tossACoin());
+		System.out.println(game.tossACoin());
+		System.out.println(game.tossACoin());
+		System.out.println(game.tossACoin());
+		System.out.println(game.tossACoin());
+	}
+
+}
